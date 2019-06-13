@@ -18,7 +18,7 @@ set( GCC_COMPILE_FLAGS "-Wall" )
 set( CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} ${GCC_COMPILE_FLAGS}" )
 
 #Include dir
-include_directories( include )
+include_directories( include/*.h )
 
 #=== Test target ===
 
@@ -31,4 +31,6 @@ add_executable(run_tests ${SOURCES_TEST} )
 #add_executable(run_drive ${SOURCES_TEST} )
 
 # Link with the google test libraries.
-#target_link_libraries(run_tests PRIVATE ${GTEST_LIBRARIES} PRIVATE pthread)
+target_link_libraries(run_tests PRIVATE ${GTEST_LIBRARIES} PRIVATE pthread)
+
+#g++ -std=c++11 ./test/main.cpp -I include/ -l gtest -l gtest_main -l pthread -o run_tests
