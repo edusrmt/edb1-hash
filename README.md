@@ -14,9 +14,14 @@ Os dados das contas corrente serão armazenados em uma tabela de dispersão de t
 
 ## 2. Compilação
 
-O projeto foi desenvolvido com [CMake](http://cmake.org), para isso, você precisa tê-lo instalado em sua máquina. Com tudo pronto, na raiz do documento, é só rodar o `cmake` para configurar o arquivo `Makefile` e, logo em seguida, usar `make` para criar o executável.
+Esse projeto pode ser compilado utilizando o CMake. CMake é uma ferramenta open_souce que constroi, testa e empacota softwares. Basicamente, CMake lê um script CMakeLists.txt com uma meta-information no projeto e cria um arquivo chamado Makefile, automaticamente, de acordo com seu sistema. Logo em seguida, você compila utilizando o comando make.
 
-> Usamos o GTest para testar todas as funcionalidades do projeto, esse arquivo poderá ser executado pelo cliente também.
+Para compilar esse projeto você pode rodar esses comando na pasta raíz.
+
+cmake -G "Unix Makefiles" ..: Diz ao CMake para criar o arquivo Makefile baseado no script CMakeLists.txt.
+make: Compila o código do projeto e gera um executável na pasta raiz.
+
+> Usamos o GTest para testar todas as funcionalidades do projeto, esse arquivo poderá ser executado pelo cliente também. Basta rodar o executável `run_tests` na pasta raiz.
 
 ## 3. Usando
 
