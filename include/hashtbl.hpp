@@ -58,13 +58,12 @@ namespace ac {
         }
 
         /// Destructs a table
-        ~HashTbl () {
-            /*
+        ~HashTbl () {            
             for (size_t i = 0; i < m_size; i++) {
-                m_data_table[i].clear();
-                
+                m_data_table[i].clear();                
             }
-            */
+
+            delete [] m_data_table;
         }
 
         /// Constructs a table from another table.
@@ -227,6 +226,7 @@ namespace ac {
 
             DataType *d_ = new DataType;
             insert (k_, *d_);
+            delete d_;
 
             for (auto it = m_data_table[addr].begin(); it != m_data_table[addr].end(); it++) {
                 if (equalFunc( it->m_key, k_))
